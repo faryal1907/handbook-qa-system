@@ -1,0 +1,50 @@
+# 🔐 Virtual Environment
+venv/
+env/
+ENV/
+
+# 🐍 Python Cache & Compiled Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 📦 Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# 📊 Data Files (can be large or regenerated)
+chunks.json
+*.csv
+*.tsv
+
+# 📄 Logs
+*.log
+
+# 🧪 Jupyter Notebooks Checkpoints (if you use later)
+.ipynb_checkpoints/
+
+# 🖥️ OS Files
+.DS_Store
+Thumbs.db
+
+# 🔑 Environment Variables / Secrets
+.env
+
+# 🧰 IDE / Editor Files
+.vscode/
+.idea/
+
+# 🧪 Temporary / Debug Files
+tmp/
+temp/
+
+# 🧠 Model / Index Files (for later days)
+*.pkl
+*.bin
+*.index
+
+# 🧾 Output / Results (optional, if you generate)
+outputs/
+results/
