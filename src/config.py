@@ -1,0 +1,4 @@
+CHUNK_SIZE = 300
+TOP_K = 5
+PDF_PATH = "data/NUST-UG-HANDBOOK.pdf"
+CHUNKS_FILE = "chunks.json"
