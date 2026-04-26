@@ -1,27 +1,38 @@
 from tf_idf import TFIDFRetriever
+from minhash_lsh import MinHashLSHRetriever
+from simhash_retrieval import SimHashRetriever
 
 
 def main():
-    print("\n---Academic Policy QA System (Day 1 - TF-IDF Baseline)---\n")
+    print("\n---Academic Policy QA System (Day 2 - Comparison Mode)---\n")
 
-    retriever = TFIDFRetriever()
+    tfidf = TFIDFRetriever()
+    lsh = MinHashLSHRetriever()
+    simhash = SimHashRetriever()
 
     while True:
         query = input("\nEnter your question (or 'exit'): ")
 
         if query.lower() == "exit":
-            print("👋 Exiting system.")
             break
 
-        results = retriever.query(query)
+        print("\n====== TF-IDF Results ======")
+        tfidf_results = tfidf.query(query)
+        for r in tfidf_results:
+            print(f"\nScore: {r['score']:.4f}")
+            print(r["text"][:200])
 
-        print("\n---Top Results---\n")
+        print("\n====== LSH Results ======")
+        lsh_results = lsh.query(query)
+        for r in lsh_results:
+            print("\nChunk:")
+            print(r["text"][:200])
 
-        for i, r in enumerate(results):
-            print(f"\n[{i+1}] Score: {r['score']:.4f}")
-            print(f"Chunk ID: {r['chunk_id']}")
-            print(f"Text: {r['text'][:300]}...")
-            print("-" * 80)
+        print("\n====== SimHash Results ======")
+        sim_results = simhash.query(query)
+        for r in sim_results:
+            print(f"\nDistance: {r['distance']}")
+            print(r["text"][:200])
 
 
 if __name__ == "__main__":
