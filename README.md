@@ -172,12 +172,12 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 ## 🚀 How to Run
 
 ### 1. Setup environment
-```bash
+
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
-### 2. Preprocess Data
+### 1. Setup environment
 
 python src/preprocess.py
 
