@@ -1,6 +1,7 @@
 import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from concurrent.futures import ThreadPoolExecutor
 
 
 class TFIDFRetriever:
@@ -9,8 +10,26 @@ class TFIDFRetriever:
         with open(chunk_file, "r", encoding="utf-8") as f:
             self.data = json.load(f)
 
-        self.chunks = [d["text"] for d in self.data]
+        # -----------------------------
+        # MAP STEP (Big Data simulation)
+        # -----------------------------
+        def map_clean(doc):
+            # simulate distributed preprocessing
+            return doc["text"].lower()
 
+        print("---Map step: preprocessing chunks in parallel---")
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            self.chunks = list(executor.map(map_clean, self.data))
+
+        # -----------------------------
+        # REDUCE STEP (aggregation)
+        # -----------------------------
+        print("---Reduce step: assembling dataset---")
+        self.chunks = [c for c in self.chunks]
+
+        # -----------------------------
+        # TF-IDF INDEXING
+        # -----------------------------
         print("---Building TF-IDF index---")
         self.vectorizer = TfidfVectorizer()
         self.tfidf_matrix = self.vectorizer.fit_transform(self.chunks)
