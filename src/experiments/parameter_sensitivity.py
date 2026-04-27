@@ -10,7 +10,7 @@ THRESHOLDS = [0.1, 0.2, 0.4, 0.6]
 
 
 def run_lsh_sensitivity():
-    print("\n📊 LSH PARAMETER SENSITIVITY EXPERIMENT\n")
+    print("\n---LSH PARAMETER SENSITIVITY EXPERIMENT---\n")
 
     for t in THRESHOLDS:
         print(f"\n================ Threshold = {t} ================\n")

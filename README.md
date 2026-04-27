@@ -1,9 +1,9 @@
-# 📚 Scalable Academic Policy QA System  
+# Scalable Academic Policy QA System  
 ### (Big Data Retrieval using TF-IDF, MinHash LSH & SimHash)
 
 ---
 
-## 👨‍💻 Overview
+## Overview
 
 This project is a **scalable Question Answering (QA) retrieval system** built over university academic handbooks (UG/PG).  
 Instead of relying on a chatbot-style system, the focus is on **efficient information retrieval at scale** using Big Data techniques.
@@ -12,7 +12,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Efficient retrieval over large academic policy documents  
 - Implementation of **approximate similarity techniques**
@@ -26,7 +26,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
                 +----------------------+
                 |   PDF Handbook       |
@@ -61,7 +61,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## ⚙️ Retrieval Methods
+## Retrieval Methods
 
 ### 1. TF-IDF (Baseline)
 
@@ -112,7 +112,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 🔄 Query Processing Flow
+## Query Processing Flow
 
 1. User enters query  
 2. Query is processed through:
@@ -125,7 +125,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 📊 Experimental Observations
+## Experimental Observations
 
 ### TF-IDF
 - Best performance for exact keyword queries  
@@ -147,7 +147,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## ⚖️ Tradeoff Analysis
+## Tradeoff Analysis
 
 | Method   | Accuracy | Speed | Scalability |
 |----------|----------|-------|--------------|
@@ -157,7 +157,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 🧠 Key Insights
+## Key Insights
 
 - Exact methods are more accurate but less scalable  
 - Approximate methods improve scalability at the cost of precision  
@@ -169,7 +169,7 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Setup environment
 
