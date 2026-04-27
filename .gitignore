@@ -1,50 +1,52 @@
-# 🔐 Virtual Environment
+# Virtual Environments
 venv/
 env/
 ENV/
+.venv/
 
-# 🐍 Python Cache & Compiled Files
+# Python Cache & Compiled Files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# 📦 Distribution / Packaging
+# Distribution / Packaging
 build/
 dist/
 *.egg-info/
 
-# 📊 Data Files (can be large or regenerated)
-chunks.json
+# Generated data files (regenerate with: python src/preprocess.py)
+# chunks.json is committed intentionally for out-of-the-box reproducibility
+chunks_large.json
 *.csv
 *.tsv
 
-# 📄 Logs
+# Logs
 *.log
 
-# 🧪 Jupyter Notebooks Checkpoints (if you use later)
+# Jupyter Notebooks Checkpoints
 .ipynb_checkpoints/
 
-# 🖥️ OS Files
+# OS Files
 .DS_Store
 Thumbs.db
 
-# 🔑 Environment Variables / Secrets
+# Environment Variables / Secrets
 .env
 
-# 🧰 IDE / Editor Files
+# IDE / Editor Files
 .vscode/
 .idea/
 
-# 🧪 Temporary / Debug Files
+# Temporary / Debug Files
 tmp/
 temp/
 
-# 🧠 Model / Index Files (for later days)
+# Model / Index Files
 *.pkl
 *.bin
 *.index
 
-# 🧾 Output / Results (optional, if you generate)
+# Output / Results
 outputs/
 results/

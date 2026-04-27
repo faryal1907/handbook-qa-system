@@ -2,10 +2,12 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from concurrent.futures import ThreadPoolExecutor
+from config import CHUNKS_FILE
 
 
 class TFIDFRetriever:
-    def __init__(self, chunk_file="chunks.json"):
+    def __init__(self, chunk_file=None):
+        chunk_file = chunk_file or CHUNKS_FILE
         print("---Loading chunks---")
         with open(chunk_file, "r", encoding="utf-8") as f:
             self.data = json.load(f)

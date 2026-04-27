@@ -1,5 +1,6 @@
 import json
 from simhash import Simhash
+from config import CHUNKS_FILE
 
 
 def get_features(text):
@@ -7,7 +8,8 @@ def get_features(text):
 
 
 class SimHashRetriever:
-    def __init__(self, chunk_file="chunks.json"):
+    def __init__(self, chunk_file=None):
+        chunk_file = chunk_file or CHUNKS_FILE
         print("---Loading chunks for SimHash---")
 
         with open(chunk_file, "r", encoding="utf-8") as f:

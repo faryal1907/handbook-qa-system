@@ -3,6 +3,7 @@ import re
 import math
 from collections import Counter
 from datasketch import MinHash, MinHashLSH
+from config import CHUNKS_FILE
 
 
 # -----------------------------
@@ -74,7 +75,8 @@ def build_weighted_minhash(text, idf_weights, num_perm=128):
 # -----------------------------
 class MinHashLSHRetriever:
 
-    def __init__(self, chunk_file="chunks.json", num_perm=128, threshold=0.05):
+    def __init__(self, chunk_file=None, num_perm=128, threshold=0.05):
+        chunk_file = chunk_file or CHUNKS_FILE
         print("\n---Loading chunks for LSH---")
 
         with open(chunk_file, "r", encoding="utf-8") as f:

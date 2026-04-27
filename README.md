@@ -173,14 +173,28 @@ The system retrieves relevant document chunks using multiple retrieval strategie
 
 ### 1. Setup environment
 
+```bash
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-### 1. Setup environment
+### 2. Preprocess PDF → generate chunks
 
+```bash
 python src/preprocess.py
+```
 
-### 3. Run System
+> **Note:** `chunks.json` is already committed in the repo so this step is optional on a fresh clone.
 
+### 3. Run the QA system
+
+```bash
 python src/main.py
+```
+
+### 4. Run evaluation
+
+```bash
+python src/evaluate.py
+```
