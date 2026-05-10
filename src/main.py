@@ -4,7 +4,7 @@ from simhash_retrieval import SimHashRetriever
 
 
 def main():
-    print("\n---Academic Policy QA System (Day 2 - Comparison Mode)---\n")
+    print("\n---Academic Policy QA System ---\n")
 
     tfidf = TFIDFRetriever()
     lsh = MinHashLSHRetriever()
