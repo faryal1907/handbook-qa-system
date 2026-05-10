@@ -12,16 +12,23 @@ class TFIDFRetriever:
         with open(chunk_file, "r", encoding="utf-8") as f:
             self.data = json.load(f)
 
-        # -----------------------------
+                # -----------------------------
         # MAP STEP (Big Data simulation)
         # -----------------------------
-        def map_clean(doc):
-            # simulate distributed preprocessing
-            return doc["text"].lower()
+        # Define common English stopwords to filter out
+        stopwords = {"the", "a", "an", "is", "in", "of", "to", "and", "for", 
+                     "that", "this", "with", "are", "be", "as", "at", "by"}
 
-        print("---Map step: preprocessing chunks in parallel---")
+        def map_remove_stopwords(doc):
+            # Genuinely useful distributed task: Tokenize and filter out noise
+            words = doc["text"].split()
+            filtered = [w for w in words if w not in stopwords]
+            return " ".join(filtered)
+
+        print("---Map step: removing stopwords in parallel---")
         with ThreadPoolExecutor(max_workers=4) as executor:
-            self.chunks = list(executor.map(map_clean, self.data))
+            self.chunks = list(executor.map(map_remove_stopwords, self.data))
+
 
         # -----------------------------
         # REDUCE STEP (aggregation)
