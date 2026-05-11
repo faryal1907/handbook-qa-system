@@ -17,7 +17,8 @@ def run_scalability_test():
 
     query = "what is attendance policy"
 
-    tfidf = TFIDFRetriever()
+    tfidf = TFIDFRetriever(chunk_file="chunks_large.json")
+
     lsh = MinHashLSHRetriever()
     simhash = SimHashRetriever()
 
